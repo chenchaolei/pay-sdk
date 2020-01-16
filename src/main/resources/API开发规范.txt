@@ -1,0 +1,53 @@
+API开发规范V1.0
+
+【约定术语】
+1.API
+        特指被com.bosssoft.pay.sdk.core.internal.mapping.ApiService标注的, 继承自com.bosssoft.pay.sdk.core.ThirdpayRequest的类型.
+        例如:
+        @ApiService("thirdpay.trade.page.pay")
+        public class ThirdpayTradePagePayRequest extends ThirdpayRequest<ThirdpayTradePagePayModel, ThirdpayTradePagePayResponse> {
+        }
+2.API关联的请求模型
+        API关联的泛型类型, 定义了API的请求参数集, 其继承自com.bosssoft.pay.sdk.core.expose.ThirdpayRequestObject
+3.API关联的响应模型
+        API关联的泛型类型, 定义了API的响应参数集, 其继承自com.bosssoft.pay.sdk.core.expose.ThirdpayResponseObject
+4.API名称
+        API名为ApiService注解指定, 通常为点分式, 如thirdpay.trade.page.pay
+5.API配置文件
+        配置API相关属性的文件, 单个API配置为通用API配置[api_common_config.default_config]和具体API配置[api_configs.*]叠加而来.
+        API常用配置项包括version、encrypt、valid, url映射规则相关的配置项包括url_prefix、map_url_rule、url_suffix、ignore_version.
+        API配置文件可用于以下场景: 接口调试、API版本管理、接口升级改造.
+
+
+【必须遵循】
+1.API配置文件的名称为sdk-config.json, 是在sdk-core常量类中定义的, 当前暂不支持修改, 后续可改为在MANIFEST.MF中定义.
+2.API配置文件为严格的json格式, 不支持任何风格的注释, 否则会解析失败!!!
+3.API配置文件对应的模型为com.bosssoft.pay.sdk.core.config.ConfigModel
+4.API配置文件的配置项api_common_config.package_scan为必配项, 定义了API的包扫描路径, 如果缺失或错误将导致API初始化(即实例化)时失败.
+
+
+【强烈建议】
+1.创建新API时, 不要复用以前的API关联的模型, 接口之间尽量保持独立.
+2.API关联请求模型和响应模型可采取创建内部类的方式来减少额外创建的DTO(Data Transfer Object)类型或枚举类型,
+  使得各个接口模型互不依赖, 减少必要时改造接口的成本.
+  内部类(枚举类型、普通类型)的创建可参考com.bosssoft.pay.demo.domain.ThirdpayTradeRefundModel
+3.API名称、API对应的类型、API关联的请求模型、API关联的响应模型尽量采用一致的命名规则,
+  例如, API名称的结构: thirdpay.trade.page.pay
+  最好做到, 由API名称就可推断出其他实体的定义.
+  例如:
+           API名称 thirdpay.trade.page.pay
+      API对应的类名 ThirdpayTradePagePayRequest
+  API关联的请求模型  ThirdpayTradePagePayModel
+  API关联的响应模型  ThirdpayTradePagePayResponse
+
+4.请求模型和响应模型中不要使用java.util.Date, 避免由于时区问题而导致的日期偏移, 建议开发者主动序列化和反序列化日期格式字段.
+5.对于API请求模型和响应中如果需要定义诸如描述状态信息的字段, 尽量使用表述形式强烈的(内部)枚举类, 而不要使用字符串, 增强代码可读性, 便于API文档生成.
+6.己方内部使用SDK时不建议使用ThirdpayFacade门面类来发起调用, 这会降低代码可读性, 它是为外部API客户端提供的, 详情请参见【开发须知】第4节.
+
+
+【开发须知】
+1.接口的请求模型中, 字段采用驼峰命名法, 字段使用注解, 在注解中定义下划线式的风格, 保证对外接口格式一致, 便于后续生成API文档.
+2.API响应模型中定义了用以处理通用异常信息字段code、msg、sub_code、sub_msg, 其getters、setters已被定义为final, 禁止覆盖(overrideen).
+3.API中的请求模型和响应模型是通过jackson来序列化和反序列化的, 在网络中传输时, 其报文的默认媒体类型为application/json, 字符编码格式为UTF-8.
+4.API客户端在不(能)改变SDK的场景下使用API服务端新发布的接口, API客户端可以通过com.bosssoft.pay.sdk.core.ThirdpayFacade门面类中的一系列快捷方法
+  ThirdpayFacade.request*(...)来发起调用, 前提是API客户端要遵循API服务端发布的接口文档.

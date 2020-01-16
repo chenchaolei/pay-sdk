@@ -1,0 +1,29 @@
+{
+  "api_common_config": {
+      "package_scan": ["com.bosssoft.zxepay.sdk.request"],
+      "default_config": {
+        "version": "1.0",
+        "encrypt": true,
+        "valid": true,
+        "map_url_rule": "default",
+        "url_prefix": null,
+        "url_suffix": ".do",
+        "ignore_version": true
+      }
+  },
+  "api_configs": {
+    "thirdpay.trade.page.pay": {
+      "version": "1.0",
+      "encrypt": true,
+      "valid": true,
+      "map_url_rule": "default",
+      "url_prefix": null,
+      "url_suffix": ".do",
+      "ignore_version": true
+    },
+    "thirdpay.trade.refund": {
+    },
+    "thirdpay.data.dataservice.bill.downloadurl.query": {
+    }
+  }
+}
