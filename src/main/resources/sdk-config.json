@@ -1,6 +1,6 @@
 {
   "api_common_config": {
-      "package_scan": ["com.bosssoft.zxepay.sdk.request"],
+      "package_scan": ["com.bosssoft.pay.sdk.request"],
       "default_config": {
         "version": "1.0",
         "encrypt": true,
