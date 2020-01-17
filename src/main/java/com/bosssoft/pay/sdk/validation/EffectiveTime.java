@@ -1,4 +1,4 @@
-package com.bosssoft.pay.demo.validation;
+package com.bosssoft.pay.sdk.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,11 +1,11 @@
-package com.bosssoft.pay.demo.domain;
+package com.bosssoft.pay.sdk.domain;
 
 import com.bosssoft.pay.sdk.core.expose.ThirdpayRequestObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
- * @Title 对账单下载地址查询接口模型
+ * @Title 对账单下载地址查询接口模型(数据来源:https://docs.open.alipay.com/api_15/alipay.data.dataservice.bill.downloadurl.query)
  * @Description
  * @Author 陈超雷(chenchaoleicn@gmail.com)
  * @Date 2020/1/16

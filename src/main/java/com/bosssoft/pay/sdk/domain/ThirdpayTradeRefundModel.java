@@ -1,16 +1,14 @@
-package com.bosssoft.pay.demo.domain;
+package com.bosssoft.pay.sdk.domain;
 
 import com.bosssoft.pay.sdk.core.expose.ThirdpayRequestObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
- * @Title 退付接口模型
+ * @Title 退付接口模型(数据来源:https://docs.open.alipay.com/api_1/alipay.trade.refund)
  * @Description
  * @Author 陈超雷(chenchaoleicn@gmail.com)
  * @Date 2020/1/16

@@ -1,10 +1,10 @@
-package com.bosssoft.pay.demo.response;
+package com.bosssoft.pay.sdk.response;
 
 import com.bosssoft.pay.sdk.core.expose.ThirdpayResponseObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @Title 退付接口响应
+ * @Title 退付接口响应(数据来源:https://docs.open.alipay.com/api_1/alipay.trade.refund)
  * @Description
  * @Author 陈超雷(chenchaoleicn@gmail.com)
  * @Date 2020/1/16

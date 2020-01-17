@@ -1,10 +1,10 @@
-package com.bosssoft.pay.demo.response;
+package com.bosssoft.pay.sdk.response;
 
 import com.bosssoft.pay.sdk.core.expose.ThirdpayResponseObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @Title 对账单下载地址查询接口响应
+ * @Title 对账单下载地址查询接口响应(数据来源:https://docs.open.alipay.com/api_15/alipay.data.dataservice.bill.downloadurl.query)
  * @Description
  * @Author 陈超雷(chenchaoleicn@gmail.com)
  * @Date 2020/1/16

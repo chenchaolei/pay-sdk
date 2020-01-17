@@ -9,7 +9,7 @@
 	</parent>
 
 	<groupId>com.bosssoft.zxepay</groupId>
-	<artifactId>zxepay-sdk</artifactId>
+	<artifactId>pay-sdk</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 

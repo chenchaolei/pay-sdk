@@ -1,9 +1,9 @@
-package com.bosssoft.pay.demo.request;
+package com.bosssoft.pay.sdk.request;
 
 import com.bosssoft.pay.sdk.core.ThirdpayRequest;
 import com.bosssoft.pay.sdk.core.internal.mapping.ApiService;
-import com.bosssoft.pay.demo.domain.ThirdpayTradePagePayModel;
-import com.bosssoft.pay.demo.response.ThirdpayTradePagePayResponse;
+import com.bosssoft.pay.sdk.domain.ThirdpayTradePagePayModel;
+import com.bosssoft.pay.sdk.response.ThirdpayTradePagePayResponse;
 
 /**
  * @Title 下单请求

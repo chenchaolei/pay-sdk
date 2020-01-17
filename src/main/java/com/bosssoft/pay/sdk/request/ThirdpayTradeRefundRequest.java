@@ -1,9 +1,9 @@
-package com.bosssoft.pay.demo.request;
+package com.bosssoft.pay.sdk.request;
 
-import com.bosssoft.pay.demo.response.ThirdpayTradeRefundResponse;
+import com.bosssoft.pay.sdk.response.ThirdpayTradeRefundResponse;
 import com.bosssoft.pay.sdk.core.ThirdpayRequest;
 import com.bosssoft.pay.sdk.core.internal.mapping.ApiService;
-import com.bosssoft.pay.demo.domain.ThirdpayTradeRefundModel;
+import com.bosssoft.pay.sdk.domain.ThirdpayTradeRefundModel;
 
 /**
  * @Title 退付请求

@@ -1,4 +1,4 @@
-package com.bosssoft.pay.demo.domain;
+package com.bosssoft.pay.sdk.domain;
 
 import com.bosssoft.pay.sdk.core.expose.ThirdpayRequestObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,7 +8,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * @Title 下单接口模型(参考自https://docs.open.alipay.com/api_1/alipay.trade.page.pay/)
+ * @Title 下单接口模型(数据来源:https://docs.open.alipay.com/api_1/alipay.trade.page.pay/)
  * @Description
  * @Author 陈超雷(chenchaoleicn@gmail.com)
  * @Date 2020/1/16
@@ -20,21 +20,21 @@ public class ThirdpayTradePagePayModel extends ThirdpayRequestObject {
      */
     @JsonProperty("out_trade_no")
     @NotBlank(message = "out_trade_no不能为空")
-    private String out_trade_no;
+    private String outTradeNo;
 
     /**
      * 产品码
      */
     @JsonProperty("product_code")
     @NotBlank(message = "product_code不能为空")
-    private String product_code;
+    private String productCode;
 
     /**
      * 订单总金额
      */
     @JsonProperty("total_amount")
     @NotBlank(message = "total_amount不能为空")
-    private String total_amount;
+    private String totalAmount;
 
     /**
      * 订单标题
@@ -57,20 +57,20 @@ public class ThirdpayTradePagePayModel extends ThirdpayRequestObject {
      */
     @JsonProperty("timeout_express")
     @NotBlank(message = "timeout_express不能为空")
-    private String timeout_express;
+    private String timeoutExpress;
 
     /**
      * 前台回调地址
      */
     @JsonProperty("return_url")
-    private String return_url;
+    private String returnUrl;
 
     /**
      * 后台回调地址
      */
     @JsonProperty("notify_url")
     @NotBlank(message = "notify_url不能为空")
-    private String backUrl;
+    private String notifyUrl;
 
     /**
      * 商户订单号
@@ -79,28 +79,28 @@ public class ThirdpayTradePagePayModel extends ThirdpayRequestObject {
     @Valid
     private List<SettleDetail> settleInfo;
 
-    public String getOut_trade_no() {
-        return out_trade_no;
+    public String getOutTradeNo() {
+        return outTradeNo;
     }
 
-    public void setOut_trade_no(String out_trade_no) {
-        this.out_trade_no = out_trade_no;
+    public void setOutTradeNo(String outTradeNo) {
+        this.outTradeNo = outTradeNo;
     }
 
-    public String getProduct_code() {
-        return product_code;
+    public String getProductCode() {
+        return productCode;
     }
 
-    public void setProduct_code(String product_code) {
-        this.product_code = product_code;
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
     }
 
-    public String getTotal_amount() {
-        return total_amount;
+    public String getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTotal_amount(String total_amount) {
-        this.total_amount = total_amount;
+    public void setTotalAmount(String totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public String getSubject() {
@@ -119,28 +119,28 @@ public class ThirdpayTradePagePayModel extends ThirdpayRequestObject {
         this.body = body;
     }
 
-    public String getTimeout_express() {
-        return timeout_express;
+    public String getTimeoutExpress() {
+        return timeoutExpress;
     }
 
-    public void setTimeout_express(String timeout_express) {
-        this.timeout_express = timeout_express;
+    public void setTimeoutExpress(String timeoutExpress) {
+        this.timeoutExpress = timeoutExpress;
     }
 
-    public String getReturn_url() {
-        return return_url;
+    public String getReturnUrl() {
+        return returnUrl;
     }
 
-    public void setReturn_url(String return_url) {
-        this.return_url = return_url;
+    public void setReturnUrl(String returnUrl) {
+        this.returnUrl = returnUrl;
     }
 
-    public String getBackUrl() {
-        return backUrl;
+    public String getNotifyUrl() {
+        return notifyUrl;
     }
 
-    public void setBackUrl(String backUrl) {
-        this.backUrl = backUrl;
+    public void setNotifyUrl(String notifyUrl) {
+        this.notifyUrl = notifyUrl;
     }
 
     public List<SettleDetail> getSettleInfo() {
@@ -195,5 +195,4 @@ public class ThirdpayTradePagePayModel extends ThirdpayRequestObject {
             this.amount = amount;
         }
     }
-
 }
