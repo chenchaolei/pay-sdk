@@ -3,7 +3,7 @@
 在支付宝、银联、微信等支付平台接入时，支付宝的SDK包最简洁，其内部设计具有良好的扩展性。
 在支付宝SDK包原设计上，增加了定制功能(对称加密、非对称加密、数据校验、http链路跟踪等)，并对其核心进行了重构。
 为了在设计多个SDK时进行代码复用，将其核心功能拆分出来，即为sdk-core项目 https://github.com/chenchaoleicn/sdk-core.git ，
-将其业务相关部分拆分出来，即为当前项目。
+将其业务相关部分拆分出来，即为当前项目，当前业务数据来自于支付宝开放平台api https://docs.open.alipay.com/api/
 ## 使用
 下文中提到的IThirdpayClient等类来自于sdk-core项目 https://github.com/chenchaoleicn/sdk-core.git
 ```
